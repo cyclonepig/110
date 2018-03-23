@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tdfp:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="tdfp.war">
+      <element id="artifact" artifact-name="tdfp:war exploded" />
+    </root>
+  </artifact>
+</component>
