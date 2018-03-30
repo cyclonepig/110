@@ -471,8 +471,8 @@ public class SqlUtil {
 									+ "the will give value type is " + fileValue.getClass().getName() + "\n" 
 									+ "the filed type type is " + field.getType().getName());
 						}
-					}else if(calssName.equals("long") || calssName.equals("java.lang.Long")){
-						Long val = new Long("" + fileValue);
+					}else if(calssName.equals("Integer") || calssName.equals("java.lang.Integer")){
+						Integer val = new Integer("" + fileValue);
 						Method method = thisClass.getMethod("set" + fileName.substring(0, 1).toUpperCase() + fileName.substring(1), field.getType());
 						method.invoke(po, val);
 						return true;

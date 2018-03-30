@@ -5,7 +5,7 @@ import com.tongdao.core.Dao.beans.Po;
 
 public class Userinfo extends Po{
 
-  private long id;
+  private Integer id;
   private String nickName;
   private String gender;
   private String city;
@@ -16,11 +16,11 @@ public class Userinfo extends Po{
   private String openId;
 
 
-  public long getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 

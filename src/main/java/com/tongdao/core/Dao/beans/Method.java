@@ -26,6 +26,11 @@ public class Method {
 		String where = C.getSqlWhere(c);
 		return where(file, where, value);
 	}
+
+	public static WherePrams orderByandLimt(String order,Integer limit){
+		return new WherePrams(order,limit);
+	}
+
 	public static WherePrams createDefault(){
 		return new WherePrams(null, null, null);
 	}

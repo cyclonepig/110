@@ -476,20 +476,20 @@ public class Daoimpl<T extends Po, PK extends Serializable> implements curdDao<T
     }
 
     @Override
-    public long count(WherePrams where) {
+    public Integer count(WherePrams where) {
         String sql = "select count(*) from ";
 
         sql += tableName + where.getWherePrams();
 
-        long count = sqlSessionTemplateASS.selectOne("selectCountByParm", sql);
+        Integer count = sqlSessionTemplateASS.selectOne("selectCountByParm", sql);
 
         return count;
     }
 
     @Override
-    public long size() {
+    public Integer size() {
         String sql = "select count(*) from " + tableName;
-        long count = sqlSessionTemplateASS.selectOne("selectCount", sql);
+        Integer count = sqlSessionTemplateASS.selectOne("selectCount", sql);
         return count;
     }
 
@@ -550,9 +550,9 @@ public class Daoimpl<T extends Po, PK extends Serializable> implements curdDao<T
     }
 
     @Override
-    public long nextId() {
+    public Integer nextId() {
         String sql = "SELECT auto_increment FROM information_schema.`TABLES` WHERE TABLE_NAME='" + tableName + "' AND TABLE_SCHEMA=(select database())";
-        Long idVal = sqlSessionTemplateASS.selectOne("fetchSeqNextval", sql);
+        Integer idVal = sqlSessionTemplateASS.selectOne("fetchSeqNextval", sql);
         if (null == idVal) {
             logger.error("/********************************");
 //            logger.error("/��ȡ" + tableName + "�����һ������ֵʧ��");

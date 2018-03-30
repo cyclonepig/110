@@ -103,7 +103,7 @@ package com.tongdao.core.redis;//package com.tongdao.cyg.base.redis;
 //     * @param value
 //     * @return
 //     */
-//    public boolean set(final String key, Object value, Long expireTime) {
+//    public boolean set(final String key, Object value, Integer expireTime) {
 //        boolean result = false;
 //        try {
 //            ValueOperations<Serializable, Object> operations = redisTemplate.opsForValue();

@@ -129,13 +129,13 @@ public interface curdDao<T extends Po,PK extends Serializable> {
      * @param where 条件表达式
      * @return 查询到的记录数
      */
-    public long count(WherePrams where);
+    public Integer count(WherePrams where);
 
     /**
      * 获取对应表中的记录数
      * @return 表中的条数
      */
-    public long size();
+    public Integer size();
 
     /**
      * 是否存在字段相同的记录（ID以及不为空的字段除外）
@@ -163,7 +163,7 @@ public interface curdDao<T extends Po,PK extends Serializable> {
      * 获得下一个序列的值
      * @return
      */
-    public long nextId();
+    public Integer nextId();
 
 
 }

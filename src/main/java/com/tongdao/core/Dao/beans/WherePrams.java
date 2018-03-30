@@ -144,8 +144,7 @@ public class WherePrams {
 				this.pram += " or " + file + where + " '" + value + "'";
 			}
 		}
-		
-		
+
 		
 //		if("like".equals(where)){
 ////			this.pram += " or " + file + " " + where + " ?";
@@ -181,6 +180,15 @@ public class WherePrams {
 		return this;
 	}
 
+	public WherePrams (String order,Integer limit){
+		if(this.orderBy != null){
+			this.orderBy += "," + order + " LIMIT " + limit;
+		}else{
+			this.orderBy = order + " LIMIT " + limit;
+		}
+
+	}
+
 	@Override
 	public String toString() {
 		return "WherePrams [pram=" + pram + "]";
@@ -204,7 +212,7 @@ public class WherePrams {
 	}
 	
 	public Serializable[] listParms(){
-		int length = getWherePrams().indexOf("?");
+		int length = getWherePrams().indexOf("?"); //判断“？”出现的位置，没有就返回-1；
 		if(-1 == length){
 			return new Serializable[0];
 		}

@@ -576,8 +576,8 @@ public class SqlUtil<T extends Po> {
 									+ "the will give value type is " + fileValue.getClass().getName() + "\n" 
 									+ "the filed type type is " + field.getType().getName());
 						}
-					}else if(calssName.equals("long") || calssName.equals("java.lang.Long")){
-						Long val = new Long("" + fileValue);
+					}else if(calssName.equals("Integer") || calssName.equals("java.lang.Integer")){
+						Integer val = new Integer("" + fileValue);
 						Method method = thisClass.getMethod("set" + fileName.substring(0, 1).toUpperCase() + fileName.substring(1), field.getType());
 						method.invoke(po, val);
 						return true;
@@ -601,8 +601,8 @@ public class SqlUtil<T extends Po> {
 						method = thisClass.getMethod("set" + fileName.substring(0, 1).toUpperCase() + fileName.substring(1), String.class);
 					}else if(fileValue instanceof Integer){
 						method = thisClass.getMethod("set" + fileName.substring(0, 1).toUpperCase() + fileName.substring(1), Integer.TYPE);
-					}else if(fileValue instanceof Long){
-						method = thisClass.getMethod("set" + fileName.substring(0, 1).toUpperCase() + fileName.substring(1), Long.TYPE);
+					}else if(fileValue instanceof Integer){
+						method = thisClass.getMethod("set" + fileName.substring(0, 1).toUpperCase() + fileName.substring(1), Integer.TYPE);
 					}else if(fileValue instanceof Double){
 						method = thisClass.getMethod("set" + fileName.substring(0, 1).toUpperCase() + fileName.substring(1), Double.TYPE);
 					}else if(fileValue instanceof Short){

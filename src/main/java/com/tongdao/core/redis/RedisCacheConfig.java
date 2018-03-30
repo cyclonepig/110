@@ -67,7 +67,7 @@ package com.tongdao.core.redis;//package com.tongdao.cyg.base.redis;
 //        //设置缓存过期时间
 //         rcm.setDefaultExpiration(60);//秒
 //        //设置value的过期时间
-//        Map<String,Long> map=new HashMap<String, Long>();
+//        Map<String,Integer> map=new HashMap<String, Integer>();
 //        map.put("test",60L);
 //        rcm.setExpires(map);
 //        return rcm;
